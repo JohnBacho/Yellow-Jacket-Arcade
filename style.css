@@ -76,8 +76,6 @@ h2 {
     margin-bottom: 20px;
     text-decoration: none; /* Remove underline from link */
     overflow: hidden; /* Ensure the corners are rounded properly */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
-
     opacity: 0; /* Start invisible */
     transform: translateY(20px); /* Start with a slight slide up */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -90,7 +88,7 @@ h2 {
 
 .game-card:hover {
     background-color: #e0e0e0; /* Light gray background on hover */
-    transform: translateY(-5px); /* Slight lift effect on hover */
+    transform: translateY(-8px); /* Slight lift effect on hover */
 }
 
 .game-card a {
