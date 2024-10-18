@@ -14,10 +14,15 @@
   <body>
     <header>
       <h1>Yellow Jacket Arcade 🐝</h1>
+      <button id="toggle-theme">Toggle Dark Mode</button>
       <nav>
         <ul>
-          <li><a href="#group-games"><u>Group Games</u></a></li>
-          <li><a href="#single-player-games"><u>Single Player Games</u></a></li>
+          <li>
+            <a href="#group-games"><u>Group Games</u></a>
+          </li>
+          <li>
+            <a href="#single-player-games"><u>Single Player Games</u></a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -93,10 +98,7 @@
           </div>
           <div class="game-card">
             <a href="https://www.nytimes.com/games/connections" target="_blank">
-              <img
-                src="images/Connections.jpg"
-                alt="Game 2 Screenshot"
-              />
+              <img src="images/Connections.jpg" alt="Game 2 Screenshot" />
               <div class="game-info">
                 <h3>Connections</h3>
               </div>
@@ -221,5 +223,37 @@
       window.addEventListener("load", fadeInOnScroll);
     </script>
 
+    <script>
+      const toggleButton = document.getElementById("toggle-theme");
+      const body = document.body;
+      const header = document.querySelector("header");
+      const sections = document.querySelectorAll("section");
+      const gameCards = document.querySelectorAll(".game-card");
+
+      // Function to apply the dark mode based on stored preference
+      function applyStoredTheme() {
+        const isDarkMode = localStorage.getItem("dark-mode") === "true";
+        if (isDarkMode) {
+          body.classList.add("dark-mode");
+          header.classList.add("dark-mode");
+          sections.forEach((section) => section.classList.add("dark-mode"));
+          gameCards.forEach((card) => card.classList.add("dark-mode"));
+        }
+      }
+
+      toggleButton.addEventListener("click", () => {
+        // Toggle dark mode class on body, header, sections, and game cards
+        body.classList.toggle("dark-mode");
+        header.classList.toggle("dark-mode");
+        sections.forEach((section) => section.classList.toggle("dark-mode"));
+        gameCards.forEach((card) => card.classList.toggle("dark-mode"));
+
+        // Store the user's choice in localStorage
+        localStorage.setItem("dark-mode", body.classList.contains("dark-mode"));
+      });
+
+      // Apply the stored theme on page load
+      window.addEventListener("load", applyStoredTheme);
+    </script>
   </body>
 </html>

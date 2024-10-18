@@ -124,3 +124,44 @@ footer {
     background: #333333; /* Dark gray footer */
     color: #ffffff; /* White text */
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+nav ul li a.dark-mode {
+    color: #e0e0e0; /* Light links */
+}
+
+section.dark-mode {
+    background-color: #2c2c2c; /* Dark background for sections */
+}
+
+footer.dark-mode {
+    background: #000000; /* Dark footer background */
+}
+
+
+body, section, footer {
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+#toggle-theme {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+    margin-bottom: 10px;
+}
+
+/* Button hover effect */
+#toggle-theme:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
