@@ -190,17 +190,6 @@
           </div>
         </div>
       </section>
-
-      <section id="chat">
-        <h2>Live Chat</h2>
-        <div id="chat-box">
-          <div id="messages"></div>
-          <input type="text" id="chat-input" placeholder="Type a message..." />
-          <button id="send-btn">Send</button>
-        </div>
-      </section>
-
-
     </main>
 
     <footer>
@@ -231,26 +220,6 @@
       // Run once on load to catch elements that are in view
       window.addEventListener("load", fadeInOnScroll);
     </script>
-
-
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  const socket = io();
-
-  document.getElementById('send-btn').addEventListener('click', () => {
-    const message = document.getElementById('chat-input').value;
-    socket.emit('chat message', message);
-    document.getElementById('chat-input').value = ''; // Clear input
-  });
-
-  socket.on('chat message', function(msg) {
-    const messages = document.getElementById('messages');
-    const messageElement = document.createElement('p');
-    messageElement.textContent = msg;
-    messages.appendChild(messageElement);
-  });
-</script>
-
 
   </body>
 </html>

@@ -124,35 +124,3 @@ footer {
     background: #333333; /* Dark gray footer */
     color: #ffffff; /* White text */
 }
-
-#chat-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  
-  #messages {
-    height: 200px;
-    overflow-y: scroll;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-  }
-  
-  #chat-input {
-    width: 80%;
-    padding: 10px;
-  }
-  
-  #send-btn {
-    padding: 10px;
-    background-color: #FFBF00;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #send-btn:hover {
-    background-color: #ffa500;
-  }
-  
