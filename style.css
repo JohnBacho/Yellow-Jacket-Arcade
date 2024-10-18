@@ -69,7 +69,7 @@ h2 {
 .game-card {
     background: #ffffff; /* White card background */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column; /* Stack children vertically */
     width: calc(23% - 20px); /* Three cards per row, adjust for spacing and shrink size */
@@ -141,6 +141,10 @@ section.dark-mode {
 
 footer.dark-mode {
     background: #000000; /* Dark footer background */
+}
+
+.game-card.dark-mode {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.22);
 }
 
 
