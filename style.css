@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Body font */
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Headings font */
+}
+
+
+header {
+    background: #FFBF00; /* amber yellow */
+    color: #ffffff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff; /* White background for sections */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the section */
+    margin: 20px 0; /* Margin for spacing between sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+h2 {
+    text-align: left;
+    font-size: 3.2vw;
+    margin-bottom: 10px;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Space between cards */
+}
+
+.game-card {
+    background: #ffffff; /* White card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    width: calc(23% - 20px); /* Three cards per row, adjust for spacing and shrink size */
+    margin-bottom: 20px;
+    text-decoration: none; /* Remove underline from link */
+    overflow: hidden; /* Ensure the corners are rounded properly */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start with a slight slide up */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.game-card.fade-in {
+    opacity: 1; /* Fade in effect */
+    transform: translateY(0); /* Move to original position */
+}
+
+.game-card:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.game-card a {
+    display: flex; /* Flex container for the card content */
+    flex-direction: column; /* Stack children vertically */
+    width: 100%; /* Make the anchor take the full width */
+    color: inherit; /* Inherit color for text */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.game-card img {
+    width: 100%; /* Make image take full width of the card */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.game-info {
+    padding: 10px;
+    flex-grow: 0; /* Prevent stretching */
+}
+
+.game-card h3 {
+    margin: 10px 0;
+    color: #333333; /* Dark gray title text */
+    text-align: center; /* Center title text */
+    font-size: 2.2vw;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333333; /* Dark gray footer */
+    color: #ffffff; /* White text */
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  #messages {
+    height: 200px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #chat-input {
+    width: 80%;
+    padding: 10px;
+  }
+  
+  #send-btn {
+    padding: 10px;
+    background-color: #FFBF00;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #send-btn:hover {
+    background-color: #ffa500;
+  }
+  
