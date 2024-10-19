@@ -166,3 +166,8 @@ body, section, footer {
     background-color: #45a049; /* Darker green on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
