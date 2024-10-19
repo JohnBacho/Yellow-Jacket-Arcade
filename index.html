@@ -3,17 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta property="og:title" content="Yellow Jacket Arcade 🐝 - Play Now!">
-    <meta property="og:description" content="Yellow Jackets play games 4 life">
-    <meta property="og:image" content="https://johnbacho.github.io/Yellow-Jacket-Arcade/images/Sharelinklogo.jpg">
-    <meta property="og:url" content="https://johnbacho.github.io/Yellow-Jacket-Arcade/">
-    <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yellow Jacket Arcade 🐝 - Play Now!">
-    <meta name="twitter:description" content="Yellow Jackets play games 4 life">
-    <meta property="twitter:image" content="https://johnbacho.github.io/Yellow-Jacket-Arcade/images/Sharelinklogo.jpg">
+    <meta property="og:title" content="Yellow Jacket Arcade 🐝 - Play Now!" />
+    <meta
+      property="og:description"
+      content="Yellow Jackets play games 4 life"
+    />
+    <meta
+      property="og:image"
+      content="https://johnbacho.github.io/Yellow-Jacket-Arcade/images/Sharelinklogo.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://johnbacho.github.io/Yellow-Jacket-Arcade/"
+    />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yellow Jacket Arcade 🐝 - Play Now!" />
+    <meta
+      name="twitter:description"
+      content="Yellow Jackets play games 4 life"
+    />
+    <meta
+      property="twitter:image"
+      content="https://johnbacho.github.io/Yellow-Jacket-Arcade/images/Sharelinklogo.jpg"
+    />
 
     <title>Yellow Jacket Arcade</title>
     <link rel="stylesheet" href="style.css" />
@@ -27,16 +42,6 @@
     <header>
       <h1>Yellow Jacket Arcade 🐝</h1>
       <button id="toggle-theme">Toggle Dark Mode</button>
-      <nav>
-        <ul>
-          <li>
-            <a href="#single-player-games"><u>Single Player Games</u></a>
-          </li>
-          <li>
-            <a href="#group-games"><u>Group Games</u></a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
     <main>
@@ -219,7 +224,19 @@
           </div>
         </div>
       </section>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxrHhtceln26qgT_dUJHwyF1yiib0k5YDMumTi1fWpUBI3Fg/viewform?embedded=true" width="80%" height="402" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    </main>
+      <section id="Game-Form">
+        <iframe
+          class="fade-in"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdxrHhtceln26qgT_dUJHwyF1yiib0k5YDMumTi1fWpUBI3Fg/viewform?embedded=true"
+          width="80%"
+          height="402"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
+      </section>
+    </main>
 
     <footer>
       <p>&copy; John A. Bacho 😀</p>
@@ -236,6 +253,7 @@
       // Function to handle the fade-in effect
       function fadeInOnScroll() {
         const cards = document.querySelectorAll(".game-card");
+
         cards.forEach((card) => {
           if (isInViewport(card)) {
             card.classList.add("fade-in");

@@ -22,20 +22,6 @@ header {
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff; /* White links */
-    text-decoration: none;
-}
-
 h1 {
     margin-bottom: 10px;
 }
@@ -126,10 +112,6 @@ footer {
 body.dark-mode {
     background-color: #1a1a1a; /* Dark background */
     color: #e0e0e0; /* Light text color */
-}
-
-nav ul li a.dark-mode {
-    color: #e0e0e0; /* Light links */
 }
 
 section.dark-mode {
