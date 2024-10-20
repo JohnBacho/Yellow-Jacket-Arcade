@@ -17,7 +17,7 @@ h1, h2, h3 {
 
 header {
     background: #FFBF00; /* amber yellow */
-    color: #ffffff; /* White text */
+    color: #ffffff; /* white text */
     padding: 20px 0;
     text-align: center;
 }
@@ -31,16 +31,16 @@ main {
 }
 
 section {
-    background-color: #ffffff; /* White background for sections */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the section */
-    margin: 20px 0; /* Margin for spacing between sections */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #ffffff; /* white background for sections */
+    border-radius: 10px; /* rounds corners */
+    padding: 20px; /* padding inside the section */
+    margin: 20px 0; /* margin for spacing between sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* adds soft shadow */
 }
 
 h2 {
     text-align: left;
-    font-size: 3.2vw;
+    font-size: 3.2vw; /* reduces text size based on viewport size */
     margin-bottom: 10px;
 }
 
@@ -48,21 +48,21 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px; /* Space between cards */
+    gap: 20px; /* space between cards */
 }
 
 .game-card {
-    background: #ffffff; /* White card background */
-    border-radius: 10px; /* Rounded corners */
+    background: #ffffff; /* white card background */
+    border-radius: 10px; /* rounds corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    width: calc(23% - 20px); /* Three cards per row, adjust for spacing and shrink size */
+    width: calc(23% - 20px); /* 4 cards per row */
     margin-bottom: 20px;
-    text-decoration: none; /* Remove underline from link */
-    overflow: hidden; /* Ensure the corners are rounded properly */
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px); /* Start with a slight slide up */
+    text-decoration: none; /* removes underline from link */
+    overflow: hidden; /* ensures the corners are rounded properly */
+    opacity: 0; /* starts invisible */
+    transform: translateY(20px); /* starts with a slight slide up */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -72,12 +72,12 @@ h2 {
 }
 
 .game-card:hover {
-    background-color: #e0e0e0; /* Light gray background on hover */
-    transform: translateY(-8px); /* Slight lift effect on hover */
+    background-color: #e0e0e0; /* light gray background on hover */
+    transform: translateY(-8px); /* slight lift effect on hover */
 }
 
 .game-card a {
-    display: flex; /* Flex container for the card content */
+    display: flex; 
     flex-direction: column; /* Stack children vertically */
     width: 100%; /* Make the anchor take the full width */
     color: inherit; /* Inherit color for text */
