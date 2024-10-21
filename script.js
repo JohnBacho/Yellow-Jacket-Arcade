@@ -106,3 +106,16 @@ function isInViewport(element) {
         }
     });
 });
+
+function launchConfetti() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 } // Controls where the confetti appears on the page
+  });
+}
+
+// Add event listeners to each podium for confetti on click
+document.querySelectorAll('.podium-item').forEach(function (podium) {
+  podium.addEventListener('click', launchConfetti);
+});
