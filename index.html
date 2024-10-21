@@ -42,6 +42,17 @@
     <header>
       <h1>Yellow Jacket Arcade 🐝</h1>
       <button id="toggle-theme">Toggle Dark Mode</button>
+
+      <span id="search-icon"
+        ><img src="images/Search Icon.svg" alt="Search icon"
+      /></span>
+      <!-- Hidden Search Input -->
+      <input
+        type="text"
+        id="game-search"
+        placeholder="Search for a game..."
+        onkeyup="searchGames()"
+      />
     </header>
 
     <main>
@@ -253,64 +264,6 @@
     <footer>
       <p>&copy; John A. Bacho 😀</p>
     </footer>
-
-    <script>
-      // Function to check if the element is in the viewport
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        const threshold = 150; // Adjust this value to trigger earlier
-        return rect.top <= window.innerHeight - threshold && rect.bottom >= 0;
-      }
-
-      // Function to handle the fade-in effect
-      function fadeInOnScroll() {
-        const cards = document.querySelectorAll(".game-card");
-
-        cards.forEach((card) => {
-          if (isInViewport(card)) {
-            card.classList.add("fade-in");
-          }
-        });
-      }
-
-      // Listen for the scroll event
-      window.addEventListener("scroll", fadeInOnScroll);
-
-      // Run once on load to catch elements that are in view
-      window.addEventListener("load", fadeInOnScroll);
-    </script>
-
-    <script>
-      const toggleButton = document.getElementById("toggle-theme");
-      const body = document.body;
-      const header = document.querySelector("header");
-      const sections = document.querySelectorAll("section");
-      const gameCards = document.querySelectorAll(".game-card");
-
-      // Function to apply the dark mode based on stored preference
-      function applyStoredTheme() {
-        const isDarkMode = localStorage.getItem("dark-mode") === "true";
-        if (isDarkMode) {
-          body.classList.add("dark-mode");
-          header.classList.add("dark-mode");
-          sections.forEach((section) => section.classList.add("dark-mode"));
-          gameCards.forEach((card) => card.classList.add("dark-mode"));
-        }
-      }
-
-      toggleButton.addEventListener("click", () => {
-        // Toggle dark mode class on body, header, sections, and game cards
-        body.classList.toggle("dark-mode");
-        header.classList.toggle("dark-mode");
-        sections.forEach((section) => section.classList.toggle("dark-mode"));
-        gameCards.forEach((card) => card.classList.toggle("dark-mode"));
-
-        // Store the user's choice in localStorage
-        localStorage.setItem("dark-mode", body.classList.contains("dark-mode"));
-      });
-
-      // Apply the stored theme on page load
-      window.addEventListener("load", applyStoredTheme);
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

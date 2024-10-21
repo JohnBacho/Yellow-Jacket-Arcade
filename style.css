@@ -19,7 +19,8 @@ header {
     background: #FFBF00; /* amber yellow */
     color: #ffffff; /* white text */
     padding: 20px 0;
-    text-align: center;
+    text-align: center; /* Centering the content */
+    position: relative; /* Allowing absolute positioning for the search icon */
 }
 
 h1 {
@@ -152,4 +153,43 @@ body, section, footer {
 iframe {
     display: block;
     margin: 0 auto;
+}
+
+#search-icon {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute; /* Position search icon absolutely */
+    right: 20px; /* Move to the far right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+}
+
+  /* Hide the search bar initially */
+  #game-search {
+    display: none;
+    margin-left: 10px;
+    padding: 5px;
+    transition: 0.3s ease;
+  }
+
+  /* Style for the search input when visible */
+  .visible {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 600px) {
+    #search-icon {
+        display: none;
+    }
+
+    #game-search {
+        display: block; /* Ensure it's displayed */
+        margin: 10px auto; /* Center horizontally */
+        width: 80%; /* Adjust width as needed */
+        padding: 10px; /* Add padding for better appearance */
+    }
+
+    #toggle-theme {
+        margin-bottom: 20px; /* Adds space below the button */
+    }
 }
