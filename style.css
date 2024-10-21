@@ -219,21 +219,21 @@ iframe {
   
   .podium-item.gold {
     background-color: gold;
-    width: 180px;
-    height: 380px;
+    width: 18vw;
+    height: 400px;
     position: relative;
   }
   
   .podium-item.silver {
     background-color: silver;
-    width: 160px;
-    height: 300px;
+    width: 15vw;
+    height: 350px;
   }
   
   .podium-item.bronze {
     background-color: #cd7f32;
-    width: 140px;
-    height: 250px;
+    width: 13vw;
+    height: 300px;
   }
   
   .podium-rank {
@@ -248,6 +248,7 @@ iframe {
     color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
+    word-break: break-word
   }
   
   .podium-info p {
@@ -255,6 +256,7 @@ iframe {
     color: black;
     line-height: 1.4;
     font-style: italic;
+    word-break: break-word
   }
   
   .podium-item:hover {
@@ -268,4 +270,44 @@ iframe {
   
   .podium-item:hover .podium-img {
     transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .podium-item .podium-img {
+        width: 70px;
+        height: 70px;
+      }
+  }
+
+  @media screen and (max-width: 700px) {
+    .podium-item .podium-img {
+        width: 30px;
+        height: 30px;
+      }
+      .podium-info h3 {
+        font-size: 10px;
+      }
+      
+      .podium-info p {
+        font-size: 6px;
+      }
+      .podium-item.gold {
+        width: 17vw;
+        height: 250px;
+      }
+      
+      .podium-item.silver {
+        width: 14vw;
+        height: 200px;
+      }
+      
+      .podium-item.bronze {
+        width: 13vw;
+        height: 170px;
+      }
+      .podium-rank {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
   }
