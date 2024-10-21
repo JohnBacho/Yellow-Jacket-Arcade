@@ -1,7 +1,7 @@
 // Function to check if the element is in the viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
-    const threshold = 150; // Adjust this value to trigger earlier
+    const threshold = 150;
     return rect.top <= window.innerHeight - threshold && rect.bottom >= 0;
   }
 
@@ -67,10 +67,10 @@ function isInViewport(element) {
 
     searchIcon.addEventListener('click', function () {
       if (searchInput.style.display === 'none' || searchInput.style.display === '') {
-        searchInput.style.display = 'inline-block'; // Show the search input
-        searchInput.focus(); // Set focus to the input field
+        searchInput.style.display = 'inline-block';
+        searchInput.focus(); 
       } else {
-        searchInput.style.display = 'none'; // Hide the search input
+        searchInput.style.display = 'none'; 
       }
     });
   });
