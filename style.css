@@ -244,7 +244,7 @@ iframe {
 }
   
 .podium-item.gold {
-  background: linear-gradient(145deg, #FFD700, #FFC700); /* Gold gradient */
+  background: linear-gradient(145deg, #FFEA00, #FFD500); /* Gold gradient */
   width: 18vw;
   height: 450px;
   position: relative;
