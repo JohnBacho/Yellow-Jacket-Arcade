@@ -130,3 +130,38 @@ function launchConfetti() {
 document.querySelectorAll('.podium-item').forEach(function (podium) {
   podium.addEventListener('click', launchConfetti);
 });
+
+// pre loads links using IntersectionObserver api
+function preloadLink(url) {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.href = url;
+  link.as = 'document';  // Adjust 'as' based on the type of resource
+  document.head.appendChild(link);
+}
+
+// Callback function for the IntersectionObserver
+function handleIntersect(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const linkElement = entry.target.querySelector('a');
+      if (linkElement) {
+        const url = linkElement.href;
+        preloadLink(url);
+        // Optionally, you can unobserve the element after preloading
+        observer.unobserve(entry.target);
+      }
+    }
+  });
+}
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(handleIntersect, {
+  root: null,        // Observe relative to the viewport
+  threshold: 0.1     // Trigger when at least 10% of the element is visible
+});
+
+// Start observing each game card
+gameCards.forEach(card => {
+  observer.observe(card);
+});

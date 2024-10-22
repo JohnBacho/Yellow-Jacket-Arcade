@@ -208,12 +208,15 @@ iframe {
     color: black; 
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    cursor: pointer
+    cursor: pointer;
+    border-radius: 10px; /* Rounds corners */
+    position: relative;
+    overflow: hidden;
   }
 
   .podium-item.fade-in {
-    opacity: 0.85; /* 0.8 visible */
-    transform: translateY(0); /* Move to original position */
+    opacity: 0.85; /* 0.85 visible */
+    transform: translateY(0); 
 }
   
   .podium-item .podium-img {
@@ -223,30 +226,50 @@ iframe {
     margin-bottom: 10px;
     transition: transform 0.5s ease;
   }
+
+  .podium-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Adds a highlight effect */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.podium-item:hover::before {
+    opacity: 1; /* Highlight appears on hover */
+}
   
-  .podium-item.gold {
-    background-color: gold;
-    width: 18vw;
-    height: 400px;
-    position: relative;
-  }
-  
-  .podium-item.silver {
-    background-color: silver;
-    width: 15vw;
-    height: 350px;
-  }
-  
-  .podium-item.bronze {
-    background-color: #cd7f32;
-    width: 13vw;
-    height: 300px;
-  }
+.podium-item.gold {
+  background: linear-gradient(145deg, #FFD700, #FFC700); /* Gold gradient */
+  width: 18vw;
+  height: 450px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6); /* Glowing shadow for gold */
+}
+
+.podium-item.silver {
+  background: linear-gradient(145deg, #C0C0C0, #A9A9A9); /* Silver gradient */
+  width: 15vw;
+  height: 400px;
+  box-shadow: 0 8px 20px rgba(192, 192, 192, 0.6); /* Glowing shadow for silver */
+}
+
+.podium-item.bronze {
+  background: linear-gradient(145deg, #CD7F32, #A97142); /* Bronze gradient */
+  width: 13vw;
+  height: 350px;
+  box-shadow: 0 8px 20px rgba(205, 127, 50, 0.6); /* Glowing shadow for bronze */
+}
   
   .podium-rank {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Shadow for better readability */
   }
   
   .podium-info h3 {
@@ -255,19 +278,18 @@ iframe {
     color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
-    word-break: break-word
-  }
-  
-  .podium-info p {
+    word-break: break-word;
+}
+
+.podium-info p {
     font-size: 16px;
     color: black;
     line-height: 1.4;
     font-style: italic;
-    word-break: break-word
-  }
-  
-  .podium-item:hover {
-    transition: transform 0.8s ease-out, background-color 0.8s ease-out;
+    word-break: break-word;
+}
+
+.podium-item:hover {
     transform: translateY(-10px); 
     opacity: 1;
   }
