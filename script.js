@@ -1,5 +1,4 @@
 // Function to check if the element is in the viewport
-// Function to check if the element is in the viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   const threshold = 100;
@@ -31,9 +30,6 @@ window.addEventListener("scroll", fadeInOnScroll);
 
 // Run once on load to catch elements that are in view
 window.addEventListener("load", fadeInOnScroll);
-
-
-
 
   const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
