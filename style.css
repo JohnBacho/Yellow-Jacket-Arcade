@@ -201,14 +201,20 @@ iframe {
   }
   
   .podium-item {
+    opacity: 0;
     text-align: center;
     margin: 0 10px;
     padding: 20px;
     color: black; 
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0.9;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     cursor: pointer
   }
+
+  .podium-item.fade-in {
+    opacity: 0.85; /* 0.8 visible */
+    transform: translateY(0); /* Move to original position */
+}
   
   .podium-item .podium-img {
     width: 100px;
@@ -261,6 +267,7 @@ iframe {
   }
   
   .podium-item:hover {
+    transition: transform 0.8s ease-out, background-color 0.8s ease-out;
     transform: translateY(-10px); 
     opacity: 1;
   }

@@ -1,26 +1,37 @@
 // Function to check if the element is in the viewport
+// Function to check if the element is in the viewport
 function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    const threshold = 150;
-    return rect.top <= window.innerHeight - threshold && rect.bottom >= 0;
-  }
+  const rect = element.getBoundingClientRect();
+  const threshold = 100;
+  return rect.top <= window.innerHeight - threshold && rect.bottom >= 0;
+}
 
-  // Function to handle the fade-in effect
-  function fadeInOnScroll() {
-    const cards = document.querySelectorAll(".game-card");
+// Function to handle the fade-in effect for game cards and podium items
+function fadeInOnScroll() {
+  const cards = document.querySelectorAll(".game-card");
+  const podiums = document.querySelectorAll(".podium-item");
 
-    cards.forEach((card) => {
+  // Fade in game cards
+  cards.forEach((card) => {
       if (isInViewport(card)) {
-        card.classList.add("fade-in");
+          card.classList.add("fade-in");
       }
-    });
-  }
+  });
 
-  // Listen for the scroll event
-  window.addEventListener("scroll", fadeInOnScroll);
+  // Fade in podium items
+  podiums.forEach((podium) => {
+      if (isInViewport(podium)) {
+          podium.classList.add("fade-in");
+      }
+  });
+}
 
-  // Run once on load to catch elements that are in view
-  window.addEventListener("load", fadeInOnScroll);
+// Listen for the scroll event
+window.addEventListener("scroll", fadeInOnScroll);
+
+// Run once on load to catch elements that are in view
+window.addEventListener("load", fadeInOnScroll);
+
 
 
 
