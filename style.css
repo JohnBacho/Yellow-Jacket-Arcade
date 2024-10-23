@@ -43,6 +43,41 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* adds soft shadow */
 }
 
+#mySidebar {
+  height: 100%;
+  width: 250px; /* Set the width of the sidebar */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 0; /* Stay at the top */
+  left: -250px; /* Hide the sidebar off-screen */
+  background-color: #111; /* Sidebar background color */
+  color: white; /* Text color */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* Transition effect */
+  padding-top: 60px; /* Space at the top */
+}
+
+#mySidebar a {
+  padding: 8px 8px 8px 32px; /* Space for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 25px; /* Font size */
+  color: white; /* Text color */
+  display: block; /* Block level */
+  transition: 0.3s; /* Transition for hover effect */
+}
+
+#mySidebar a:hover {
+  color: #f1f1f1; /* Change color on hover */
+}
+
+.openbtn {
+  cursor: pointer; /* Change cursor */
+}
+/* added padding for the header elements */
+#side_bar_header{
+padding: 20px;
+}
+
 h2 {
     text-align: left;
     font-size: 3.2vw; /* reduces text size based on viewport size */
@@ -350,37 +385,3 @@ iframe {
         margin-bottom: 10px;
       }
   }
-  #mySidebar {
-    height: 100%;
-    width: 250px; /* Set the width of the sidebar */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    top: 0; /* Stay at the top */
-    left: -250px; /* Hide the sidebar off-screen */
-    background-color: #111; /* Sidebar background color */
-    color: white; /* Text color */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* Transition effect */
-    padding-top: 60px; /* Space at the top */
-}
-
-#mySidebar a {
-    padding: 8px 8px 8px 32px; /* Space for links */
-    text-decoration: none; /* Remove underline */
-    font-size: 25px; /* Font size */
-    color: white; /* Text color */
-    display: block; /* Block level */
-    transition: 0.3s; /* Transition for hover effect */
-}
-
-#mySidebar a:hover {
-    color: #f1f1f1; /* Change color on hover */
-}
-
-.openbtn {
-    cursor: pointer; /* Change cursor */
-}
-/* added padding for the header elements */
-#side_bar_header{
-  padding: 20px;
-}
