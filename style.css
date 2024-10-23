@@ -380,6 +380,7 @@ iframe {
 .openbtn {
     cursor: pointer; /* Change cursor */
 }
+/* added padding for the header elements */
 #side_bar_header{
   padding: 20px;
 }
