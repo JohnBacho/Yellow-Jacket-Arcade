@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Lato', sans-serif; /* Body font */
     line-height: 1.6;
@@ -162,6 +166,15 @@ iframe {
     right: 20px; /* Move to the far right */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for perfect vertical centering */
+}
+
+#menu-icon {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute; /* Position search icon absolutely */
+  left: 20px; /* Move to the far right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
 }
 
   /* Hide the search bar initially */
@@ -337,3 +350,36 @@ iframe {
         margin-bottom: 10px;
       }
   }
+  #mySidebar {
+    height: 100%;
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top: 0; /* Stay at the top */
+    left: -250px; /* Hide the sidebar off-screen */
+    background-color: #111; /* Sidebar background color */
+    color: white; /* Text color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Transition effect */
+    padding-top: 60px; /* Space at the top */
+}
+
+#mySidebar a {
+    padding: 8px 8px 8px 32px; /* Space for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 25px; /* Font size */
+    color: white; /* Text color */
+    display: block; /* Block level */
+    transition: 0.3s; /* Transition for hover effect */
+}
+
+#mySidebar a:hover {
+    color: #f1f1f1; /* Change color on hover */
+}
+
+.openbtn {
+    cursor: pointer; /* Change cursor */
+}
+#side_bar_header{
+  padding: 20px;
+}

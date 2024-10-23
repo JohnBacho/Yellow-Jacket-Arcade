@@ -179,3 +179,41 @@ function observeGameCards(cards) {
 
 // Example usage: Observe elements containing the links you want to preload
 observeGameCards(gameCards);
+
+// Get references to the sidebar and menu icon
+const sidebar = document.getElementById('mySidebar');
+const menuIcon = document.getElementById('menu-icon');
+
+// Function to close the sidebar
+function closeSidebar() {
+  sidebar.style.left = "-250px"; // Hide the sidebar by moving it off-screen
+}
+
+// Function to open the sidebar
+function openSidebar() {
+  sidebar.style.left = "0"; // Show the sidebar
+}
+
+// Toggle the sidebar
+function toggleNav() {
+  // Get the computed style of the sidebar
+  const computedStyle = window.getComputedStyle(sidebar);
+  
+  // Check if the sidebar is currently hidden or visible
+  if (computedStyle.left === "0px") {
+    closeSidebar(); // Close the sidebar if it's currently open
+  } else {
+    openSidebar(); // Open the sidebar if it's currently closed
+  }
+}
+
+// Add event listener to the menu icon for toggling the sidebar
+menuIcon.addEventListener('click', toggleNav);
+
+// Close the sidebar when clicking outside
+document.addEventListener('click', function (event) {
+  // Check if the clicked element is outside the sidebar and menu icon
+  if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+    closeSidebar(); // Close the sidebar if the click is outside
+  }
+});

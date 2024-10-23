@@ -53,9 +53,30 @@
         placeholder="Search for a game..."
         onkeyup="searchGames()"
       />
+      <button
+        class="openbtn"
+        id="menu-icon"
+        onclick="toggleNav()"
+        style="background: none; border: none; cursor: pointer"
+      >
+        <img src="images/icons8-menu.svg" alt="Menu icon" />
+      </button>
     </header>
 
+    <!-- side bar -->
+    <div id="mySidebar">
+      <h2 id="side_bar_header">Sidebar Content</h2>
+      <a href="#single-player-games" style="color: white; text-decoration: none"
+        ><u>Single Player</u></a
+      ><br />
+      <a href="#group-games" style="color: white; text-decoration: none"><u>Group Games</u></a><br />
+      <a href="#podium" style="color: white; text-decoration: none"><u>Leaderboard</u></a><br />
+      <a href="#Game-Form" style="color: white; text-decoration: none"><u>Game Form</u></a><br />
+
+    </div>
+
     <main>
+      <!-- single player -->
       <section id="single-player-games">
         <h2>Single Player Games</h2>
         <div class="game-container">
@@ -178,6 +199,7 @@
           </div>
         </div>
       </section>
+      <!-- Group Games -->
       <section id="group-games">
         <h2>Group Games</h2>
         <div class="game-container">
@@ -247,6 +269,7 @@
           </div>
         </div>
       </section>
+      <!-- Leaderboard -->
       <section id="podium">
         <h2>Leaderboard</h2>
         <div class="podium-container">
