@@ -127,12 +127,15 @@ document.querySelectorAll('.podium-item').forEach(function (podium) {
   podium.addEventListener('click', launchConfetti);
 });
 
-// pre loads links using IntersectionObserver api
+// Function to preload a link
 function preloadLink(url) {
   const link = document.createElement('link');
   link.rel = 'preload';
   link.href = url;
-  link.as = 'document';  // Adjust 'as' based on the type of resource
+
+  // Remove the 'as' attribute to avoid errors, or use 'fetch' for dynamic content
+  link.as = 'fetch';  // You can use 'fetch' for preloading external resources like documents or APIs
+
   document.head.appendChild(link);
 }
 
@@ -144,7 +147,8 @@ function handleIntersect(entries, observer) {
       if (linkElement) {
         const url = linkElement.href;
         preloadLink(url);
-        // Optionally, you can unobserve the element after preloading
+        
+        // Unobserve the element after preloading to avoid repeated triggers
         observer.unobserve(entry.target);
       }
     }
@@ -157,7 +161,9 @@ const observer = new IntersectionObserver(handleIntersect, {
   threshold: 0.1     // Trigger when at least 10% of the element is visible
 });
 
-// Start observing each game card
+// Select all the game cards or elements containing links you want to preload
+
+// Start observing each game card for preloading links
 gameCards.forEach(card => {
   observer.observe(card);
 });
