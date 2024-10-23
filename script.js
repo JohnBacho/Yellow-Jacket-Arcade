@@ -128,42 +128,54 @@ document.querySelectorAll('.podium-item').forEach(function (podium) {
 });
 
 // Function to preload a link
-function preloadLink(url) {
+// Efficient preload function
+function preloadLink(url, resourceType = 'fetch') {
+  if (document.querySelector(`link[href="${url}"][rel="preload"]`)) {
+    // If already preloaded, skip it
+    return;
+  }
+
+  // Create a preload link element
   const link = document.createElement('link');
   link.rel = 'preload';
   link.href = url;
-
-  // Remove the 'as' attribute to avoid errors, or use 'fetch' for dynamic content
-  link.as = 'fetch';  // You can use 'fetch' for preloading external resources like documents or APIs
+  
+  // Optionally set the resource type if specified (like 'image', 'script', etc.)
+  if (resourceType) {
+    link.as = resourceType;
+  }
 
   document.head.appendChild(link);
 }
 
-// Callback function for the IntersectionObserver
+// Callback function for IntersectionObserver
 function handleIntersect(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const linkElement = entry.target.querySelector('a');
+      const linkElement = entry.target.querySelector('a'); // Find the anchor inside the observed element
       if (linkElement) {
         const url = linkElement.href;
-        preloadLink(url);
-        
-        // Unobserve the element after preloading to avoid repeated triggers
+        preloadLink(url); // Preload the resource when in the viewport
+
+        // Unobserve the element after preloading to prevent redundant operations
         observer.unobserve(entry.target);
       }
     }
   });
 }
 
-// Create an IntersectionObserver instance
+// Create a shared IntersectionObserver instance
 const observer = new IntersectionObserver(handleIntersect, {
   root: null,        // Observe relative to the viewport
   threshold: 0.1     // Trigger when at least 10% of the element is visible
 });
 
-// Select all the game cards or elements containing links you want to preload
+// Function to observe game cards or link containers
+function observeGameCards(cards) {
+  cards.forEach(card => {
+    observer.observe(card);  // Observe each card for intersection
+  });
+}
 
-// Start observing each game card for preloading links
-gameCards.forEach(card => {
-  observer.observe(card);
-});
+// Example usage: Observe elements containing the links you want to preload
+observeGameCards(gameCards);
