@@ -76,6 +76,7 @@ section {
 /* added padding for the header elements */
 #side_bar_header{
 padding: 20px;
+font-size: 3rem;
 }
 
 h2 {
@@ -228,6 +229,9 @@ iframe {
   @media screen and (max-width: 600px) {
     #search-icon {
         display: none;
+    }
+    #menu-icon{
+      display: none;
     }
 
     #game-search {
