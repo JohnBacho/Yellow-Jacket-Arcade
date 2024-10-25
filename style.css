@@ -63,11 +63,11 @@ section {
   font-size: 25px; /* Font size */
   color: white; /* Text color */
   display: block; /* Block level */
-  transition: 0.3s; /* Transition for hover effect */
+  transition: 0.5s; /* Transition for hover effect */
 }
 
 #mySidebar a:hover {
-  color: #f1f1f1; /* Change color on hover */
+  color: #939393; /* Change color on hover */
 }
 
 .openbtn {
