@@ -129,6 +129,7 @@ document.querySelectorAll('.podium-item').forEach(function (podium) {
 
 // Function to preload a link
 // Efficient preload function
+// Function to preload a link
 function preloadLink(url, resourceType = 'fetch') {
   if (document.querySelector(`link[href="${url}"][rel="preload"]`)) {
     // If already preloaded, skip it
@@ -139,7 +140,7 @@ function preloadLink(url, resourceType = 'fetch') {
   const link = document.createElement('link');
   link.rel = 'preload';
   link.href = url;
-  
+
   // Optionally set the resource type if specified (like 'image', 'script', etc.)
   if (resourceType) {
     link.as = resourceType;
@@ -148,37 +149,25 @@ function preloadLink(url, resourceType = 'fetch') {
   document.head.appendChild(link);
 }
 
-// Callback function for IntersectionObserver
-function handleIntersect(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const linkElement = entry.target.querySelector('a'); // Find the anchor inside the observed element
-      if (linkElement) {
-        const url = linkElement.href;
-        preloadLink(url); // Preload the resource when in the viewport
-
-        // Unobserve the element after preloading to prevent redundant operations
-        observer.unobserve(entry.target);
-      }
-    }
-  });
+// Function to handle mouse enter event
+function handleMouseEnter(event) {
+  const linkElement = event.currentTarget.querySelector('a'); // Find the anchor inside the hovered card
+  if (linkElement) {
+    const url = linkElement.href;
+    preloadLink(url); // Preload the resource when hovering over the card
+  }
 }
-
-// Create a shared IntersectionObserver instance
-const observer = new IntersectionObserver(handleIntersect, {
-  root: null,        // Observe relative to the viewport
-  threshold: 0.1     // Trigger when at least 10% of the element is visible
-});
 
 // Function to observe game cards or link containers
 function observeGameCards(cards) {
   cards.forEach(card => {
-    observer.observe(card);  // Observe each card for intersection
+    card.addEventListener('mouseenter', handleMouseEnter); // Add mouse enter event listener
   });
 }
 
 // Example usage: Observe elements containing the links you want to preload
 observeGameCards(gameCards);
+
 
 // Get references to the sidebar and menu icon
 const sidebar = document.getElementById('mySidebar');
