@@ -38,15 +38,28 @@ window.addEventListener("load", fadeInOnScroll);
   const gameCards = document.querySelectorAll(".game-card");
 
   // Function to apply the dark mode based on stored preference
-  function applyStoredTheme() {
-    const isDarkMode = localStorage.getItem("dark-mode") === "true";
-    if (isDarkMode) {
-      body.classList.add("dark-mode");
-      header.classList.add("dark-mode");
-      sections.forEach((section) => section.classList.add("dark-mode"));
-      gameCards.forEach((card) => card.classList.add("dark-mode"));
-    }
+// Function to apply the dark mode based on stored preference or default to dark mode
+function applyStoredTheme() {
+  const isDarkMode = localStorage.getItem("dark-mode");
+
+  // If no preference is stored, default to dark mode
+  if (isDarkMode === null) {
+    body.classList.add("dark-mode");
+    header.classList.add("dark-mode");
+    sections.forEach((section) => section.classList.add("dark-mode"));
+    gameCards.forEach((card) => card.classList.add("dark-mode"));
+  } else if (isDarkMode === "true") {
+    // Apply stored preference for dark mode
+    body.classList.add("dark-mode");
+    header.classList.add("dark-mode");
+    sections.forEach((section) => section.classList.add("dark-mode"));
+    gameCards.forEach((card) => card.classList.add("dark-mode"));
   }
+}
+
+// Apply the stored theme on page load
+window.addEventListener("load", applyStoredTheme);
+
 
   toggleButton.addEventListener("click", () => {
     // Toggle dark mode class on body, header, sections, and game cards
