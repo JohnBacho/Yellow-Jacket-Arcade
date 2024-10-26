@@ -128,10 +128,16 @@ window.addEventListener("load", applyStoredTheme);
 });
 
 function launchConfetti() {
+  const originX = event.clientX / window.innerWidth; // Normalize to [0, 1]
+  const originY = event.clientY / window.innerHeight; // Normalize to [0, 1]
+
   confetti({
     particleCount: 100,
     spread: 70,
-    origin: { y: 0.6 } // Controls where the confetti appears on the page
+    origin: {
+      x: originX, // Horizontal position
+      y: originY  // Vertical position
+    }
   });
 }
 
