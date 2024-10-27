@@ -113,7 +113,7 @@ h2 {
 }
 
 .game-card:hover {
-  background-color: #e0e0e0; /* light gray background on hover */
+  background-color: #b0b0b0; /* light gray background on hover */
   transform: translateY(-10px) scale(1.028); /* slight lift effect on hover */
   filter: brightness(1.05); /* slight brightness increase */
 }
