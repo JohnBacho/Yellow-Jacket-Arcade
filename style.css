@@ -63,11 +63,11 @@ section {
   font-size: 25px; /* Font size */
   color: white; /* Text color */
   display: block; /* Block level */
-  transition: 0.5s; /* Transition for hover effect */
+  transition: 0.4s; /* Transition for hover effect */
 }
 
 #mySidebar a:hover {
-  color: #939393; /* Change color on hover */
+  color: #7a7a7a; /* Change color on hover */
 }
 
 .openbtn {
@@ -181,14 +181,21 @@ body, section, footer {
     padding: 10px 15px; /* Padding for the button */
     font-size: 16px; /* Font size */
     cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+    transition: background-color 0.4s ease, transform 0.4s, box-shadow 0.4s ease; /* Smooth transitions */
     margin-bottom: 10px;
 }
 
 /* Button hover effect */
 #toggle-theme:hover {
     background-color: #45a049; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#toggle-theme:active {
+  background-color: #2b622e; /* Darker green when pressed */
+  transform: scale(0.98); /* Slightly shrink on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow when pressed */
 }
 
 iframe {
@@ -253,6 +260,18 @@ iframe {
         margin-bottom: 20px; /* Adds space below the button */
     }
 }
+
+#search-icon,
+#menu-icon {
+  transition: ease 0.6s; /* Adds a delay to the release */
+}
+
+#search-icon:hover,
+#menu-icon:hover {
+  filter: brightness(0.75); /* Darken the icon for a pressed look */
+  transition: filter 0.3s ease-out; /* Smooth transition */
+}
+
 .podium-container {
     display: flex;
     justify-content: center;
