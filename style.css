@@ -131,6 +131,17 @@ h2 {
     height: auto; /* Maintain aspect ratio */
 }
 
+@media (max-width: 768px) {
+  .game-card {
+      width: calc(100% / 3 - 20px); /* Adjust width for 3 cards per row */
+      /* Optionally adjust height or padding to make cards larger */
+      height: 250px; /* Set a fixed height for cards */
+  }
+    .game-card h3 {
+      font-size: 3.2vw !important;
+  }
+}
+
 .game-info {
     padding: 10px;
     flex-grow: 0; /* Prevent stretching */
