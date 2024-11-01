@@ -336,7 +336,7 @@ iframe {
 .podium-item.gold {
   background: linear-gradient(145deg, #FFEA00, #FFD500); /* Gold gradient */
   width: 18vw;
-  height: 450px;
+  height: 500px;
   position: relative;
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6); /* Glowing shadow for gold */
 }
@@ -344,14 +344,14 @@ iframe {
 .podium-item.silver {
   background: linear-gradient(145deg, #C0C0C0, #A9A9A9); /* Silver gradient */
   width: 15vw;
-  height: 400px;
+  height: 440px;
   box-shadow: 0 8px 20px rgba(192, 192, 192, 0.6); /* Glowing shadow for silver */
 }
 
 .podium-item.bronze {
   background: linear-gradient(145deg, #CD7F32, #A97142); /* Bronze gradient */
   width: 13vw;
-  height: 350px;
+  height: 400px;
   box-shadow: 0 8px 20px rgba(205, 127, 50, 0.6); /* Glowing shadow for bronze */
 }
   

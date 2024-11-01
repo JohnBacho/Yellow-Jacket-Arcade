@@ -11,6 +11,14 @@ const fadeInOnScroll = () => {
   });
 };
 
+const debounce = (func, wait = 100) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+};
+
 // Apply dark mode based on stored preference
 const applyStoredTheme = () => {
   const isDarkMode = localStorage.getItem("dark-mode");
