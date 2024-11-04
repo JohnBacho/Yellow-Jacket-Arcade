@@ -119,12 +119,14 @@ h2 {
 }
 
 .game-card a {
-    display: flex; 
-    flex-direction: column; /* Stack children vertically */
-    width: 100%; /* Make the anchor take the full width */
-    color: inherit; /* Inherit color for text */
-    text-decoration: none; /* Removes underline from the link */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  height: 100%; /* Make the anchor take the full height of the game card */
+  width: 100%; /* Make the anchor take the full width */
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Removes underline from link */
 }
+
 
 .game-card img {
     width: 100%; /* Make image take full width of the card */
@@ -133,9 +135,8 @@ h2 {
 
 @media (max-width: 768px) {
   .game-card {
-      width: calc(100% / 3 - 20px); /* Adjust width for 3 cards per row */
-      /* Optionally adjust height or padding to make cards larger */
-      height: 250px; /* Set a fixed height for cards */
+      width: calc(100% / 3 - 20px);
+      height: 250px;
   }
     .game-card h3 {
       font-size: 3.2vw !important;
